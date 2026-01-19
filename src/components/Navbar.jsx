@@ -57,7 +57,7 @@ export default function Navbar() {
             <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
               Anil’s
             </span>
-            <span className="text-white ml-1">Portfolio</span>
+            <span className="text-white ml-1">Kumar</span>
           </h1>
 
           {/* DESKTOP MENU */}
