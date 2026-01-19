@@ -42,7 +42,7 @@ export default function Hero() {
           <h2 className="text-[28px] font-semibold mb-2">Anil Kumar</h2>
 
           <h1 className="text-[56px] font-extrabold leading-tight mb-6">
-            <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
               UI/UX designer
             </span>
           </h1>
