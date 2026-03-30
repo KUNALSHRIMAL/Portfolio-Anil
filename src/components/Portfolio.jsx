@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { useNavigate } from "react-router-dom";
 export default function Portfolio() {
   const filters = [
     "All",
@@ -17,6 +17,7 @@ export default function Portfolio() {
       title: "Mobile App UI Collection",
       category: "Mobile App",
       filter: "App Mobile Design",
+      path: "/portfolio/mobile-apps",
     },
     {
       id: 2,
@@ -24,6 +25,7 @@ export default function Portfolio() {
       title: "E-Commerce Website",
       category: "Website Design",
       filter: "Website Design",
+      path: "/portfolio/ecommerce",
     },
     {
       id: 3,
@@ -31,6 +33,7 @@ export default function Portfolio() {
       title: "Dashboards",
       category: "Dashboards",
       filter: "Dashboards",
+      path: "/portfolio/dashboards",
     },
     {
       id: 4,
@@ -38,17 +41,21 @@ export default function Portfolio() {
       title: "High Fidelity UI Designs",
       category: "Buttons/Gradients",
       filter: "Buttons/Gradients",
+      path: "/portfolio/high-fidelity",
     },
     {
       id: 5,
       img: "/portfolio/p5.png",
-      title: "Advertisement/Design",
-      category: "Product design",
+      title: "Product Design",
+      category: "Product Design",
       filter: "Website Design",
+      path: "/portfolio/product-design",
     },
   ];
 
+
   const [activeFilter, setActiveFilter] = useState("All");
+  const navigate = useNavigate();
 
   const filteredProjects =
     activeFilter === "All"
@@ -85,12 +92,14 @@ export default function Portfolio() {
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.id}
+                onClick={() => navigate(project.path)}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 className="bg-[#1A1A1A] rounded-xl p-3 hover:shadow-[0_0_15px_rgba(255,128,0,0.25)] transition cursor-pointer"
               >
+
                 {/* IMAGE */}
                 <img
                   src={project.img}
